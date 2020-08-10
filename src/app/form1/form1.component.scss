@@ -1,0 +1,17 @@
+.listing{margin:20px 0;
+    ul{margin: 0; padding: 0; list-style: none;
+        li{display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; flex-direction: row; border-bottom: 1px solid #ddd; margin:10px 0; padding: 10px 0;
+            &:first-child{font-weight: bold;}
+            span{display: inline; padding: 0 10px;
+                &:nth-child(1){width: 10%;}
+                &:nth-child(2){width: 50%;}
+                &:nth-child(3){width: 40%;}
+                &.actionBx{
+                    button{margin-right: 5px; border: 1px solid #ddd; background: #fff;
+                        &:hover{background: #ddd;}
+                    }
+                }
+            }
+        }
+    }
+}
