@@ -12,9 +12,12 @@ export class Form1Component implements OnInit {
   inputData:any;
 
   ngOnInit() {}
-  addData(val){
-    if(val.length>0){
-      this.dataList.push(val);
+
+  addData(){
+    // console.log(this.inputData);
+    if(this.inputData.length > 0){
+      console.log(this.inputData);
+      this.dataList.push(this.inputData);
       this.inputData = "";
     } 
   }
