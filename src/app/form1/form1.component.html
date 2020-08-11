@@ -5,22 +5,24 @@
             <div class="col-md-4">
                 <div class="mb-4">
                     <label for="firstName">Add content</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
+                    <input type="text" class="form-control" id="firstName" [(ngModel)]="inputData" name="inputData">
                     <div class="invalid-feedback">
                       Valid first name is required.
                     </div>
                   </div>
-              <button class="btn btn-primary btn-lg btn-block" type="submit"> Add Data </button>
+                  {{inputData}}
+              <button class="btn btn-primary btn-lg btn-block" type="button" (click)="addData(inputData)"> Add Data  </button>
+              
             </div>
         </form>
       </div>
       <div class="listing">
           <ul>
               <li><span>S.No</span> <span> Description </span> <span> Actions</span></li>
-              <li>
-                  <span>1</span>
-                  <span>Data cpmes here</span> 
-                  <span class="actionBx"> <button> Add </button> <button> Delete </button> <button> Edit </button> </span></li>
+              <li *ngFor="let list of dataList; index as i">
+                  <span>{{i+1}}</span>
+                  <span>{{list}}</span> 
+                  <span class="actionBx"><button> Delete </button> <button> Edit </button> </span></li>
           </ul>
       </div>
     

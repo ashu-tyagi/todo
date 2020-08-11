@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form1.component.scss']
 })
 export class Form1Component implements OnInit {
-
   constructor() { }
+  dataList = ['Phones', 'Refregetor'];
+  
+  inputData:any;
 
-  ngOnInit() {
+  ngOnInit() {}
+  addData(val){
+    if(val.length>0){
+      this.dataList.push(val);
+      this.inputData = "";
+    } 
   }
 
 }
