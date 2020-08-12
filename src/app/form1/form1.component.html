@@ -11,7 +11,8 @@
                     </div>
                   </div>
                   {{inputData}}
-              <button class="btn btn-primary btn-lg btn-block" type="button" (click)="addData()"> Add Data  </button>
+              <button class="btn btn-primary btn-lg btn-block" type="button" (click)="addData()" *ngIf="currentIndex == -1"> Add Data  </button>
+              <button class="btn btn-primary btn-lg btn-block" type="button" (click)="update()" *ngIf="currentIndex !== -1"> Update Data  </button>
               
             </div>
         </form>
@@ -22,7 +23,11 @@
               <li *ngFor="let list of dataList; index as i">
                   <span>{{i+1}}</span>
                   <span>{{list}}</span> 
-                  <span class="actionBx"><button> Delete </button> <button> Edit </button> </span></li>
+                  <span class="actionBx">
+                      <button (click)="remove(i)"> Delete </button> 
+                      <button (click)="edit(i)"> Edit </button> </span>
+               </li>
+               <li *ngIf="dataList.length == 0"> No data</li>
           </ul>
       </div>
     
